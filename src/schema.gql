@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  _id: String
+  username: String
+  email: String
+  createdAt: String
+  updatedAt: String
+}
+
+type MutationResult {
+  success: Boolean
+  error: Boolean
+}
+
+type AuthResult {
+  success: Boolean
+  error: Boolean
+  token: String!
+}
+
+type Query {
+  getUser(id: Int!): User!
+  getCurentUser: User!
+}
+
+type Mutation {
+  signup(userData: SignupDto!): MutationResult!
+  signin(userData: SigninDto!): AuthResult!
+}
+
+input SignupDto {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input SigninDto {
+  username: String!
+  password: String!
+}
